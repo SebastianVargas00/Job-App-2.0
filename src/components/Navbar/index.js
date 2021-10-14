@@ -1,6 +1,4 @@
 import React,{useState,useEffect} from 'react'
-import app from '../../firebase';
-import bussiness from '../../images/businness.svg';
 import '../../css/Menu.css';
 
 import {NavLink}from 'react-router-dom'
@@ -73,22 +71,11 @@ return (
                   Home
               </NavLink>
           </li>
-          <li className="nav-item ">
-              <NavLink className="nav-link" to="/Empleo" exact>
-              <i className=" far fa-address-book"></i>
-                  About
-              </NavLink>
-          </li>
+          
           <li className="nav-item ">
               <NavLink className="nav-link" to="/servicies" exact>
               <i className=" far fa-clone"></i>
                   Services
-              </NavLink>
-          </li>
-          <li className="nav-item ">
-              <NavLink className="nav-link" to="/contact-us" exact>
-              <i className=" far fa-copy"></i>
-                  Contact
               </NavLink>
           </li>
           <li className="nav-item ">

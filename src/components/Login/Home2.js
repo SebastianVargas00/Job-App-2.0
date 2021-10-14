@@ -1,143 +1,73 @@
 import React from 'react'
-import { Nav, Tab, Table,  Col, Row} from 'react-bootstrap';
+import "../../css/home.css"
+import {  useHistory } from 'react-router-dom';
+import districto from "../../images/Districto.jpg"
+import santiago from "../../images/santiago.png"
+import romana from "../../images/romana.jpg"
 
-import '../../css/App.css';
-import '../../css/App.css';
 
-const Home2= () => {
+
+const Home2 = () => {
+    let history= useHistory();
+
+    function handleClick() {
+      history.push("/signin");
+    }
+
     return (
-<div class="">
-<header class="bg-dark py-5">
-            <div class="container px-5">
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="text-center my-5">
-                            <h1 class="display-5 fw-bolder text-white mb-2">Bienvenido Vancate</h1>
-                            <p class="lead text-white-50 mb-4">Que desea hacer en nuestro sitio web?</p>
-                            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Ver empleos</a>
-                                <a class="btn btn-outline-light btn-lg px-4" href="#!">Buscar empleos</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <section class="py-5 border-bottom" id="features">
-            <div class="container px-5 my-5">
-                <div class="row gx-5">
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
-                        <h2 class="h4 fw-bolder">Seguridad</h2>
-                        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                        <a class="text-decoration-none" href="#!">
-                            Call to action
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
-                        <h2 class="h4 fw-bolder">Confianza</h2>
-                        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                        <a class="text-decoration-none" href="#!">
-                            Call to action
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                        <h2 class="h4 fw-bolder">Oportunidad</h2>
-                        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                        <a class="text-decoration-none" href="#!">
-                            Call to action
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div className="jobs">
-          
-          <div className="Container_busqueda">
-          <div className="busqueda">
-            <div>
-              <input className="form-control txt" type="text"></input>
-            </div>
-            <div style={{marginRight: "10px"}}>
-              <button className="btn btn-outline-primary" variant="outline-primary">Buscar</button>
-            </div>
-            <div>
-              <button className="btn btn-primary btn-job" href="/src/pages/New_Job.js">post a job</button>
-            </div>
-          </div>
+      <div className="Home_page">
+      <div className="wrapper">
+      <div className="content">
+        <h1>BIENVENIDO A JOB BAG</h1>
+        <p>Nunca fue tan facil encontrar trabajo</p>
+        <button type="button" onClick={handleClick}>Inicia Sesion<span></span></button>
+      </div>
+      </div>  
+      <section className="jobs">
+      <h1>Trabajos que ofrecemos</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque nisi neque sit loremp  totam loi totam.</p>
+      <div className=" jobs-row">
+        <div className="jobs-col">
+         <h3>Front-end</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque nisi neque sit loremp  totam loi totam.</p>
         </div>
-
-      <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-        <Row>
-          <Col sm={3}>
-            <Nav variant="pills" className="flex-column">
-              <Nav.Item>
-                <Nav.Link eventKey="first">Programacion</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="second">Diseño</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="thrid">Mecanica</Nav.Link>
-              </Nav.Item>
-            </Nav>
-          </Col>
-          <Col sm={9}>
-            <Tab.Content>
-              <Tab.Pane eventKey="first">
-                <Table striped bordered hover variant="light">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Localizacion</th>
-                        <th>Posicion</th>
-                        <th>Empresa</th>
-                      </tr>
-                   </thead>
-                   <tbody>
-                      
-                   </tbody>
-                </Table>
-              </Tab.Pane>
-              <Tab.Pane eventKey="second">
-                <Table striped bordered hover variant="light">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Localizacion</th>
-                      <th>Posicion</th>
-                      <th>Empresa</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    
-                  </tbody>
-                </Table>
-              </Tab.Pane>
-              <Tab.Pane eventKey="thrid">
-                <Table striped bordered hover variant="light">
-                  <thead>
-                  <tr>
-                      <th>#</th>
-                      <th>Localizacion</th>
-                      <th>Posicion</th>
-                      <th>Empresa</th>
-                    </tr>
-                  </thead>
-                </Table>
-              </Tab.Pane>
-            </Tab.Content>
-          </Col>
-        </Row>
-      </Tab.Container>
-    </div>
-</div>
-    )
+        <div className="jobs-col">
+         <h3>Back-End</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque nisi neque sit loremp  totam loi totam.</p>
+        </div>
+        <div className="jobs-col">
+         <h3>Design-UI</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque nisi neque sit loremp  totam loi totam.</p>
+        </div>
+      </div>
+      </section>
+      <section className="places">
+        <h1>Nos encontramos</h1>
+        <p>Lorem ipsum dolor sit </p>
+        <div className="places_row">
+          <div className="places-col">
+          <img src={districto} alt=""/>
+          <div className="layer">
+            <h3>Districto Nacional</h3>
+          </div>
+          </div> 
+          <div className="places-col">
+          <img src={santiago} alt="" className="santiago"/>
+          <div className="layer">
+            <h3>Santiago</h3>
+          </div>
+          </div> 
+          <div className="places-col">
+          <img src={romana} alt="" className="romana"/>
+          <div className="layer">
+            <h3>La Romana</h3>
+          </div>
+          </div> 
+        </div>
+      </section>
+      </div>
+  );
 }
 
+ 
 export default Home2

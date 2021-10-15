@@ -1,35 +1,53 @@
 import React from 'react'
 import { Form, Button, Col, Row} from 'react-bootstrap';
 import '../css/App.css';
+import {  useHistory } from 'react-router-dom';
 
 const New_Job = () => {
+  let history= useHistory();
+
+  function handleClick() {
+    history.push("/Empleo");
+  }
+  function handleServicies(){
+    history.push("/Home2")
+  }
     return (
       
-      <section class=" bajar shadow-sm">
+      <section class=" bajar ">
       <div class="mask d-flex align-items-center h-100 gradient-custom">
         <div class="container">
+          
           <div class="row justify-content-center">
-            <div class="col-12 col-lg-9 col-xl-7">
-              <div class="card">
+            
+            <div class="col-12 col-lg-9 col-xl-7 ">
+              
+              <div class="card shadow-sm">
+              <div class=" modal-header bg-dark">
+
+              <h3 class="text-white"><strong> Registration Form</strong></h3>
+            </div>
                 <div class="card-body p-4 p-md-5">
-                  <h3 class="mb-4 pb-2">Registration Form</h3>
+                  
     
                   <form action="">
     
-                    <div class="row">
+                    <div class="row ">
                       <div class="col-md-6 mb-4">
     
                         <div class="form-outline">
+                        <label class="form-label" for="firstName">Compañia</label>
                           <input type="text" id="firstName" class="form-control" />
-                          <label class="form-label" for="firstName">First Name</label>
+                          
                         </div>
     
                       </div>
                       <div class="col-md-6 mb-4">
     
                         <div class="form-outline">
+                          <label class="form-label" for="lastName">Posicion</label>
                           <input type="text" id="lastName" class="form-control" />
-                          <label class="form-label" for="lastName">Last Name</label>
+                          
                         </div>
     
                       </div>
@@ -39,18 +57,18 @@ const New_Job = () => {
                       <div class="col-md-6 mb-4">
     
                         <div class="form-outline datepicker">
+                        <label for="birthdayDate" class="form-label">Ubicacion</label>
                           <input
                             type="text"
                             class="form-control"
                             id="birthdayDate"
                           />
-                          <label for="birthdayDate" class="form-label">Birthday</label>
                         </div>
     
                       </div>
                       <div class="col-md-6 mb-4">
     
-                        <h6 class="mb-2 pb-1">Gender: </h6>
+                        <h6 class="mb-2 pb-1">Tipo: </h6>
     
                         <div class="form-check form-check-inline">
                           <input
@@ -60,7 +78,7 @@ const New_Job = () => {
                             id="femaleGender"
                             value="option1"
                           />
-                          <label class="form-check-label" for="femaleGender">Female</label>
+                          <label class="form-check-label" for="femaleGender">Full Time</label>
                         </div>
     
                         <div class="form-check form-check-inline">
@@ -71,10 +89,11 @@ const New_Job = () => {
                             id="maleGender"
                             value="option2"
                           />
-                          <label class="form-check-label" for="maleGender">Male</label>
+                          <label class="form-check-label" for="maleGender">Part Time</label>
                         </div>
     
                         <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="otherGender">Freelance</label>
                           <input
                             class="form-check-input"
                             type="radio"
@@ -82,7 +101,7 @@ const New_Job = () => {
                             id="otherGender"
                             value="option3"
                           />
-                          <label class="form-check-label" for="otherGender">Other</label>
+                          
                         </div>
     
                       </div>
@@ -92,47 +111,58 @@ const New_Job = () => {
                       <div class="col-md-6 mb-4">
     
                         <div class="form-outline">
-                          <input type="email" id="emailAddress" class="form-control" />
                           <label class="form-label" for="emailAddress">Email</label>
+                          <input type="email" id="emailAddress" class="form-control" />
+                          
                         </div>
     
                       </div>
                       <div class="col-md-6 mb-4">
     
-                        <div class="form-outline">
-                          <input type="tel" id="phoneNumber" class="form-control" />
-                          <label class="form-label" for="phoneNumber">Phone Number</label>
-                        </div>
-    
-                      </div>
-                    </div>
-    
-                    <div class="row">
-                      <div class="col-12">
-    
-                        <h6 class="mb-3">Subject</h6>
-    
-                        <select class="select" multiple>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
-                          <option value="4">Four</option>
-                          <option value="5">Five</option>
-                          <option value="6">Six</option>
-                          <option value="7">Seven</option>
-                          <option value="8">Eight</option>
+                      <div class="">
+                      <label for="inputState">Categoria</label>
+                        <select id="inputState" class="form-control">
+                          <option selected>Choose...</option>
+                          <option>...</option>
                         </select>
                         
+                      </div>
     
-                        <div class="mt-4">
-                          <input class="btn btn-warning btn-lg" type="submit" value="Submit" />
+                      </div>
+                      <div class="col-md-6 mb-4">
+    
+                        <div class="form-outline">
+                          <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Descricion del empleo</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                          </div>
                         </div>
     
                       </div>
-                    </div>
+                      <div class="col-md-6 mb-4">
     
+                        <div class="form-outline">
+                          <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Como Aplicar</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 ">
+    
+                        <div class="">
+                          <div class="modal-body">
+                            <button type="button" class="btn btn-secondary col-md-6" data-bs-dismiss="modal"onClick={handleServicies}>Atras</button>
+                            <button  type="submit" class="btn btn-outline-success col-md-6 r"onClick={handleClick}>Agregar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  
+
                   </form>
                 </div>
+                
               </div>
             </div>
           </div>

@@ -3,6 +3,7 @@ import { Nav, Tab, Table,  Col, Row} from 'react-bootstrap';
 import '../../css/App.css';
 import '../../css/App.css';
 
+
 const Empleo= () => {
     return (
 <div class="">
@@ -33,7 +34,7 @@ const Empleo= () => {
             </div>
         </header>
     <section class="py-5 border-bottom" id="features">
-        <Tab.Container id="left-tabs-example" defaultActiveKey="first ">
+        <Tab.Container id="left-tabs-example" defaultActiveKey="first">
         <Row>
           <Col sm={3}>
             <Nav variant="pills  " className="flex-column">
@@ -51,45 +52,69 @@ const Empleo= () => {
           <Col sm={9}>
             <Tab.Content>
               <Tab.Pane eventKey="first">
-                <Table striped bordered hover variant="light table table-bordered table-hover">
+                <Table striped bordered hover variant="  table table-bordered table-hover">
                     <thead>
                       <tr className="table table-hover table-dark">
                         <th>#</th>
                         <th>Localizacion</th>
                         <th>Posicion</th>
                         <th>Empresa</th>
+                        <th>Opciones</th>
                       </tr>
                    </thead>
                    <tbody>
-                      
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td><a class="btn btn-primary" href="#" role="button">Editar</a><a class="btn btn-secondary" href="#" role="button">Detalle</a><a class="btn btn-danger" href="#" role="button">Eliminar</a></td>
+                    </tr>
                    </tbody>
                 </Table>
               </Tab.Pane>
               <Tab.Pane eventKey="second">
-                <Table striped bordered hover variant="light">
+                <Table striped bordered hover variant="">
                   <thead>
-                    <tr>
+                    <tr  className="table table-hover table-dark">
                       <th>#</th>
                       <th>Localizacion</th>
                       <th>Posicion</th>
                       <th>Empresa</th>
+                      <th>Opciones</th>
                     </tr>
                   </thead>
                   <tbody>
-                    
-                  </tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td><a class="btn btn-primary" href="#" role="button">Editar</a><a class="btn btn-secondary" href="#" role="button">Detalle</a><a class="btn btn-danger" href="#" role="button">Eliminar</a></td>
+                    </tr>
+                   </tbody>
                 </Table>
               </Tab.Pane>
               <Tab.Pane eventKey="thrid">
                 <Table striped bordered hover variant="light">
                   <thead>
-                  <tr>
+                  <tr  className="table table-hover table-dark">
                       <th>#</th>
                       <th>Localizacion</th>
                       <th>Posicion</th>
                       <th>Empresa</th>
+                      <th>Opciones</th>
                     </tr>
                   </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td><a class="btn btn-primary" href="#" role="button">Editar</a><a class="btn btn-secondary" href="#" role="button">Detalle</a><a class="btn btn-danger" href="#" role="button">Eliminar</a></td>
+                    </tr>
+                   </tbody>
                 </Table>
               </Tab.Pane>
             </Tab.Content>

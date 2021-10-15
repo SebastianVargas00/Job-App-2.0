@@ -71,13 +71,6 @@ return (
                   Home
               </NavLink>
           </li>
-          
-          <li className="nav-item ">
-              <NavLink className="nav-link" to="/servicies" exact>
-              <i className=" far fa-clone"></i>
-                  Services
-              </NavLink>
-          </li>
           <li className="nav-item ">
               <NavLink className="nav-link" to="/signin" exact>
               <i className=" far fa-chart-bar"></i>

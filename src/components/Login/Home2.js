@@ -13,6 +13,9 @@ const Home2 = () => {
     function handleClick() {
       history.push("/signin");
     }
+    function handleServicies(){
+      history.push("/Home2")
+    }
 
     return (
       <div className="Home_page">
@@ -20,6 +23,7 @@ const Home2 = () => {
       <div className="content">
         <h1>BIENVENIDO A JOB BAG</h1>
         <p>Nunca fue tan facil encontrar trabajo</p>
+        <button type="button" onClick={handleServicies}>Servicios<span></span></button>
         <button type="button" onClick={handleClick}>Inicia Sesion<span></span></button>
       </div>
       </div>  

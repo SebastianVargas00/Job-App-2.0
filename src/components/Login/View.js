@@ -6,7 +6,7 @@ import '../../css/App.css';
 const View= () => {
     return (
 <div class="">
-<header class="bg-dark py-5" src="">
+<header class="bg-dark py-5">
             <div class="container px-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">

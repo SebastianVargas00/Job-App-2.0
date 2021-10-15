@@ -1,11 +1,35 @@
 import React,{useState,useEffect} from 'react'
 import '../../css/Menu.css';
-
+import { useHistory } from 'react-router';
 import {NavLink}from 'react-router-dom'
 import $ from 'jquery';
+import app from '../../firebase';
 
 
 const Navbar = () => {
+  const [user,setUser]=useState("")
+    
+  const handlelogout=()=>{
+      app.auth().signOut();
+    }
+    const authListener=()=>{
+      app.auth().onAuthStateChanged(user=>{
+        if(user){
+          setUser(user);
+        }
+        else{
+          setUser("");
+        }
+      })
+      }
+    
+      useEffect(()=>{
+       authListener();
+    
+      },[])
+
+
+
   function animacion(){
     var tabsNewAnim = $('#navbarSupportedContent');
     var activeItemNewAnim = tabsNewAnim.find('.active');
@@ -72,10 +96,18 @@ return (
               </NavLink>
           </li>
           <li className="nav-item ">
-              <NavLink className="nav-link" to="/signin" exact>
+            {user?(
+              <NavLink className="nav-link" to="/" onClick={handlelogout} exact>
+              <i className=" far fa-chart-bar"></i>
+                  Log Out
+              </NavLink>
+              ):(
+                <NavLink className="nav-link" to="/signin" exact>
               <i className=" far fa-chart-bar"></i>
                   Sing in
               </NavLink>
+              )}
+              
           </li>
       </ul>
   </div>

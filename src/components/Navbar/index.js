@@ -3,11 +3,16 @@ import '../../css/Menu.css';
 import { useHistory } from 'react-router';
 import {NavLink}from 'react-router-dom'
 import $ from 'jquery';
-import app from '../../firebase';
+import { app } from '../../firebase';
+import { auth } from '../../firebase';
+import { useAuthState } from 'react-firebase-hooks/auth'
+import Swal from 'sweetalert2';
+
 
 
 const Navbar = () => {
   const [user,setUser]=useState("")
+  const [normaluser] = useAuthState(auth)
     
   const handlelogout=()=>{
       app.auth().signOut();
@@ -27,7 +32,11 @@ const Navbar = () => {
        authListener();
     
       },[])
-
+   function notify(){
+    Swal.fire('Bienvenido',
+    'Inicia Sesion con Google',
+    'success')
+   }
 
 
   function animacion(){
@@ -104,9 +113,10 @@ return (
               ):(
                 <NavLink className="nav-link" to="/signin" exact>
               <i className=" far fa-chart-bar"></i>
-                  Sing in
+                  Admin Mode
               </NavLink>
               )}
+
               
           </li>
       </ul>

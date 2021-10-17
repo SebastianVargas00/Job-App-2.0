@@ -4,18 +4,21 @@ import {  useHistory } from 'react-router-dom';
 import districto from "../../images/Districto.jpg"
 import santiago from "../../images/santiago.png"
 import romana from "../../images/romana.jpg"
-
+import firebase from 'firebase';
+import { auth } from '../../firebase';
 
 
 const Home2 = () => {
     let history= useHistory();
 
-    function handleClick() {
-      history.push("/signin");
-    }
+  
     function handleServicies(){
       history.push("/Home2")
     }
+    function signInWithGoogle() {
+      const provider = new firebase.auth.GoogleAuthProvider()
+      auth.signInWithPopup(provider)
+  }
 
     return (
       <div className="Home_page">
@@ -24,7 +27,7 @@ const Home2 = () => {
         <h1>BIENVENIDO A JOB BAG</h1>
         <p>Nunca fue tan facil encontrar trabajo</p>
         <button type="button" onClick={handleServicies}>Servicios<span></span></button>
-        <button type="button" onClick={handleClick}>Inicia Sesion<span></span></button>
+        <button type="button" onClick={signInWithGoogle}>Inicia Sesion<span></span></button>
       </div>
       </div>  
       <section className="jobs">

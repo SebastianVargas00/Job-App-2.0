@@ -1,6 +1,6 @@
 import React,{useState,useEffect}from "react"
 import '../css/App.css';
-import app from "../firebase"
+import {app} from "../firebase"
 import Login from "../components/Navbar/Login";
 import Swal from "sweetalert2";
 import { useHistory } from 'react-router';
@@ -58,24 +58,6 @@ function Auth() {
      })
   }
 
-  const handlesignup=()=>{
-    clearErrors();
-    app
-     .auth()
-     .createUserWithEmailAndPassword(email,password)
-     .catch(err=>{
-       switch(err.code){
-        case "auth/email-already-in-use":
-          case "auth/invalid-email":
-              setEmailerror(err.message)
-              break;
-        case"auth/weak-password":
-          setPassworderror(err.message)
-          break;
-       }
-     })
-  }
-
   const authListener=()=>{
   app.auth().onAuthStateChanged(user=>{
     clearInputs();
@@ -96,13 +78,9 @@ function Auth() {
   return (
     <div className="App">
     {user?(
-      //<Hero handlelogout={handlelogout}/>
-       //<Navbar user={user}/>
-      //alert("Bienvenido usuario")
-      //notify()
       User()
     ):(
-      <Login email={email} setEmail={setEmail} password={password} setPassword={setPassword} handlelogin={handlelogin}  handlesignup={handlesignup} hasaccount={hasaccount} setHasaccount={setHasaccount} emailerror={emailerror} passworderror={passworderror}/>
+      <Login email={email} setEmail={setEmail} password={password} setPassword={setPassword} handlelogin={handlelogin} emailerror={emailerror} passworderror={passworderror}/>
     )}
     </div>
   );

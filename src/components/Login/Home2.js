@@ -6,10 +6,34 @@ import santiago from "../../images/santiago.png"
 import romana from "../../images/romana.jpg"
 import firebase from 'firebase';
 import { auth } from '../../firebase';
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { useState,useEffect } from 'react';
+import { app } from '../../firebase';
 
 
 const Home2 = () => {
     let history= useHistory();
+    const [user,setUser]=useState("")
+    const [normaluser] = useAuthState(auth)
+
+    const handlelogout=()=>{
+      app.auth().signOut();
+    }
+    const authListener=()=>{
+      app.auth().onAuthStateChanged(user=>{
+        if(user){
+          setUser(user);
+        }
+        else{
+          setUser("");
+        }
+      })
+      }
+    
+      useEffect(()=>{
+       authListener();
+    
+      },[])
 
   
     function handleServicies(){
@@ -20,14 +44,19 @@ const Home2 = () => {
       auth.signInWithPopup(provider)
   }
 
+
     return (
       <div className="Home_page">
       <div className="wrapper">
       <div className="content">
         <h1>BIENVENIDO A JOB BAG</h1>
         <p>Nunca fue tan facil encontrar trabajo</p>
+        {normaluser ?(
+      <button type="button" onClick={()=>auth.signOut()}>Log out<span></span></button>
+        ):(
+       <button type="button" onClick={signInWithGoogle}>Inicia Sesion<span></span></button>
+        )}
         <button type="button" onClick={handleServicies}>Servicios<span></span></button>
-        <button type="button" onClick={signInWithGoogle}>Inicia Sesion<span></span></button>
       </div>
       </div>  
       <section className="jobs">

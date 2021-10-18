@@ -80,7 +80,7 @@ return (
       
   <NavLink className="navbar-brand navbar-logo bajar" to="/" exact>
   <i class="fas fa-briefcase"></i>
-      Empleos
+      Job Bag
   </NavLink>
 
   <button 
@@ -105,7 +105,7 @@ return (
               </NavLink>
           </li>
           <li className="nav-item ">
-            {user?(
+            {user ||normaluser?(
               <NavLink className="nav-link" to="/" onClick={handlelogout} exact>
               <i className=" far fa-chart-bar"></i>
                   Log Out

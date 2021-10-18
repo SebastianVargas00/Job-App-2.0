@@ -22,9 +22,9 @@ const Home = () => {
             <i class="fas fa-user-tie text-dark subir tamaño"></i>
           </NavLink>
             <h1 class="fw-light">Bienvenido Usuarios</h1>
-            <p class="lead text-muted">Que desea Hacer?</p>
+            <p class="lead text-muted">Que desea hacer?</p>
             <p>
-              <a href="#" class="btn btn-primary my-2"onClick={handleServicies}>Buscar empleos</a>
+              <a href="#" class="btn btn-primary my-2 mx-2"onClick={handleServicies}>Buscar empleos</a>
               <a href="#" class="btn btn-secondary my-2"onClick={handleClick}>Agregar Empleos</a>
             </p>
           </div>

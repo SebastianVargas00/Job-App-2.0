@@ -13,12 +13,12 @@ const Empleo= () => {
                     <div class="col-lg-6">
                         <div class="text-center my-5">
                             <h1 class="display-5 fw-bolder text-white mb-2">Empleos</h1>
-                            <p class="lead text-white-50 mb-4">Busque el emplos de Tu Profession!!</p>
+                            <p class="lead text-white-50 mb-4">Busque el Empleo de tu Profesion!!</p>
                             <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
                                 
                                 <div class="row">
                                     <div class="col">
-                                        <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Escribe el Empelo que buscas" data-sb-validations="required,email" data-sb-can-submit="no"/>
+                                        <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Escribe el Empleo que buscas" data-sb-validations="required,email" data-sb-can-submit="no"/>
                                         <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
                                         <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Empelo no encontrado</div>
                                     </div>
@@ -68,7 +68,7 @@ const Empleo= () => {
                       <td>Mark</td>
                       <td>Otto</td>
                       <td>@mdo</td>
-                      <td><a class="btn btn-primary" href="#" role="button">Editar</a><a class="btn btn-secondary" href="#" role="button">Detalle</a><a class="btn btn-danger" href="#" role="button">Eliminar</a></td>
+                      <td><a class="btn btn-primary" href="#" role="button">Editar</a><a class="btn btn-secondary mx-1" href="#" role="button">Detalle</a><a class="btn btn-danger" href="#" role="button">Eliminar</a></td>
                     </tr>
                    </tbody>
                 </Table>
@@ -90,7 +90,7 @@ const Empleo= () => {
                       <td>Mark</td>
                       <td>Otto</td>
                       <td>@mdo</td>
-                      <td><a class="btn btn-primary" href="#" role="button">Editar</a><a class="btn btn-secondary" href="#" role="button">Detalle</a><a class="btn btn-danger" href="#" role="button">Eliminar</a></td>
+                      <td><a class="btn btn-primary" href="#" role="button">Editar</a><a class="btn btn-secondary mx-1" href="#" role="button">Detalle</a><a class="btn btn-danger" href="#" role="button">Eliminar</a></td>
                     </tr>
                    </tbody>
                 </Table>
@@ -112,7 +112,7 @@ const Empleo= () => {
                       <td>Mark</td>
                       <td>Otto</td>
                       <td>@mdo</td>
-                      <td><a class="btn btn-primary" href="#" role="button">Editar</a><a class="btn btn-secondary" href="#" role="button">Detalle</a><a class="btn btn-danger" href="#" role="button">Eliminar</a></td>
+                      <td><a class="btn btn-primary" href="#" role="button">Editar</a><a class="btn btn-secondary mx-1" href="#" role="button">Detalle</a><a class="btn btn-danger" href="#" role="button">Eliminar</a></td>
                     </tr>
                    </tbody>
                 </Table>

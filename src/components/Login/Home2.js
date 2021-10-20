@@ -9,15 +9,24 @@ import { auth } from '../../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useState,useEffect } from 'react';
 import { app } from '../../firebase';
+import Cookies from 'universal-cookie';
+import Swal from 'sweetalert2';
 
 
 const Home2 = () => {
     let history= useHistory();
     const [user,setUser]=useState("")
     const [normaluser] = useAuthState(auth)
+    const cookies=new Cookies()
+    var admin =cookies.get('username')
 
     const handlelogout=()=>{
       app.auth().signOut();
+      cookies.remove('id', {path: "/"});
+      cookies.remove('nombre', {path: "/"});
+      cookies.remove('apellidos', {path: "/"});
+      cookies.remove('username', {path: "/"});
+      window.location.href='./';
     }
     const authListener=()=>{
       app.auth().onAuthStateChanged(user=>{
@@ -43,20 +52,29 @@ const Home2 = () => {
       const provider = new firebase.auth.GoogleAuthProvider()
       auth.signInWithPopup(provider)
   }
-
-
+    function notify(){
+      Swal.fire(
+        'Oops!',
+        'Debe Iniciar Sesion',
+        'error'
+      )
+      }
     return (
       <div className="Home_page">
       <div className="wrapper">
       <div className="content">
         <h1>BIENVENIDO A JOB BAG</h1>
         <p>Nunca fue tan facil encontrar trabajo</p>
-        {normaluser ?(
-      <button type="button" onClick={()=>auth.signOut()}>Log out<span></span></button>
+        {normaluser || admin?(
+      <button type="button" onClick={handlelogout}>Log out<span></span></button>
         ):(
        <button type="button" onClick={signInWithGoogle}>Inicia Sesion<span></span></button>
         )}
-        <button type="button" onClick={handleServicies}>Servicios<span></span></button>
+        {normaluser || admin?(
+      <button type="button" onClick={handleServicies}>Servicios<span></span></button>
+        ):(
+       <button type="button" onClick={notify}>Servicios<span></span></button>
+        )}
       </div>
       </div>  
       <section className="jobs">

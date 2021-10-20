@@ -152,8 +152,8 @@ const New_Job = () => {
     
                         <div class="">
                           <div class="modal-body d-flex justify-content-between">
-                            <button type="button" class="btn btn-secondary " data-bs-dismiss="modal"onClick={handleServicies}>Atras</button>
-                            <button  type="submit" class="btn btn-outline-success mx-2"onClick={handleClick}>Agregar</button>
+                            <button type="button" class="btn btn-secondary col-md-6" data-bs-dismiss="modal"onClick={handleServicies}>Atras</button>
+                            <button  type="submit" class="btn btn-outline-success col-md-6 mx-2 "onClick={handleClick}>Agregar</button>
                           </div>
                         </div>
                       </div>

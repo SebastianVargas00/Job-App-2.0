@@ -11,6 +11,7 @@ import Footer from "./footer/Footer"
 import about_us from './pages/about_us';
 import Empleo from './components/Login/Empleo';
 import home2 from './components/Login/Home2';
+import Login from './Login 2.0/Login';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
      <Navbar/>
      <Switch>
        <Route path="/" exact component={home2}/>
-       <Route path="/signin" exact component={Auth}/>
+       <Route path="/signin" exact component={Login}/>
        <Route path="/servicies" exact component={New_Job}/>
        <Route path="/contact-us" exact component={Contact}/>
        <Route path="/Home2" exact component={Home}/> 

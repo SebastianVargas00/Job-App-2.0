@@ -2,9 +2,13 @@ import React from 'react'
 import { Nav, Tab, Table,  Col, Row} from 'react-bootstrap';
 import '../../css/App.css';
 import '../../css/App.css';
+import { app } from '../../firebase';
+import { auth } from '../../firebase';
+import { useAuthState } from 'react-firebase-hooks/auth'
 
 
 const Empleo= () => {
+  const [normaluser] = useAuthState(auth)
     return (
 <div class="">
 <header class="bg-dark py-5" src="">
@@ -68,7 +72,11 @@ const Empleo= () => {
                       <td>Mark</td>
                       <td>Otto</td>
                       <td>@mdo</td>
-                      <td><a class="btn btn-primary" href="#" role="button">Editar</a><a class="btn btn-secondary mx-1" href="#" role="button">Detalle</a><a class="btn btn-danger" href="#" role="button">Eliminar</a></td>
+                      <td>
+                        {normaluser?(<button class="btn btn-primary" href="#" disabled>Editar</button>):(<button class="btn btn-primary" href="#" role="button">Editar</button>)}
+                        <button class="btn btn-secondary mx-1" href="#">Detalle</button>
+                        {normaluser?(<button class="btn btn-danger" href="#" disabled>Eliminar</button>):(<button class="btn btn-danger" href="#" role="button">Eliminar</button>)}
+                        </td>
                     </tr>
                    </tbody>
                 </Table>
@@ -90,7 +98,11 @@ const Empleo= () => {
                       <td>Mark</td>
                       <td>Otto</td>
                       <td>@mdo</td>
-                      <td><a class="btn btn-primary" href="#" role="button">Editar</a><a class="btn btn-secondary mx-1" href="#" role="button">Detalle</a><a class="btn btn-danger" href="#" role="button">Eliminar</a></td>
+                      <td>
+                        {normaluser?(<button class="btn btn-primary" href="#" disabled>Editar</button>):(<button class="btn btn-primary" href="#">Editar</button>)}
+                        <button class="btn btn-secondary mx-1" href="#">Detalle</button>
+                        {normaluser?(<button class="btn btn-danger" href="#" disabled>Eliminar</button>):(<button class="btn btn-danger" href="#">Eliminar</button>)}
+                        </td>
                     </tr>
                    </tbody>
                 </Table>
@@ -112,7 +124,11 @@ const Empleo= () => {
                       <td>Mark</td>
                       <td>Otto</td>
                       <td>@mdo</td>
-                      <td><a class="btn btn-primary" href="#" role="button">Editar</a><a class="btn btn-secondary mx-1" href="#" role="button">Detalle</a><a class="btn btn-danger" href="#" role="button">Eliminar</a></td>
+                      <td>
+                        {normaluser?(<button class="btn btn-primary" href="#" disabled>Editar</button>):(<button class="btn btn-primary" href="#">Editar</button>)}
+                        <button class="btn btn-secondary mx-1" href="#">Detalle</button>
+                       {normaluser?(<button class="btn btn-danger" href="#" disabled>Eliminar</button>):(<button class="btn btn-danger" href="#">Eliminar</button>)}
+                        </td>
                     </tr>
                    </tbody>
                 </Table>

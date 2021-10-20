@@ -7,15 +7,21 @@ import { app } from '../../firebase';
 import { auth } from '../../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth'
 import Swal from 'sweetalert2';
-
-
+import Cookies from 'universal-cookie';
 
 const Navbar = () => {
-  const [user,setUser]=useState("")
   const [normaluser] = useAuthState(auth)
-    
+  const cookies = new Cookies();
+  const[user,setUser]=useState()
+  var admin=cookies.get('username')
+  
   const handlelogout=()=>{
       app.auth().signOut();
+      cookies.remove('id', {path: "/"});
+      cookies.remove('nombre', {path: "/"});
+      cookies.remove('apellidos', {path: "/"});
+      cookies.remove('username', {path: "/"});
+      window.location.href='./';
     }
     const authListener=()=>{
       app.auth().onAuthStateChanged(user=>{
@@ -32,11 +38,7 @@ const Navbar = () => {
        authListener();
     
       },[])
-   function notify(){
-    Swal.fire('Bienvenido',
-    'Inicia Sesion con Google',
-    'success')
-   }
+   
 
 
   function animacion(){
@@ -104,8 +106,8 @@ return (
                   Home
               </NavLink>
           </li>
-          <li className="nav-item ">
-            {user ||normaluser?(
+          <li className="nav-item">
+            {normaluser || admin?(
               <NavLink className="nav-link" to="/" onClick={handlelogout} exact>
               <i className=" far fa-chart-bar"></i>
                   Log Out
@@ -116,7 +118,6 @@ return (
                   Admin Mode
               </NavLink>
               )}
-
               
           </li>
       </ul>
